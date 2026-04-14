@@ -5,10 +5,9 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const links = [
-  { href: "/", label: "Home" },
+  { href: "/", label: "About" },
   { href: "/resume", label: "Resume" },
   { href: "/projects", label: "Projects" },
-  { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -20,7 +19,7 @@ export default function Navbar() {
     <nav className="nav-root">
       <div className="nav-inner">
         <Link href="/" className="nav-logo">
-          Your Name
+          Franco Bonilla
         </Link>
 
         <ul className="nav-desktop-list">

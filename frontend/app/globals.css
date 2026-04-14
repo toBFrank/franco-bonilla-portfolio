@@ -116,46 +116,54 @@ body {
     @apply border border-black px-2 py-1 text-xs;
   }
 
-  /* ─── Home ────────────────────────────────────────── */
+  /* ─── About ────────────────────────────────────────── */
 
-  .home-wrapper {
+  .about-wrapper {
     @apply flex flex-col gap-12;
   }
 
-  .home-hero {
+  .about-hero {
     @apply border border-black p-8;
   }
 
-  .home-hero-inner {
+  .about-hero-inner {
     @apply flex flex-col sm:flex-row gap-8 items-start;
   }
 
-  .home-photo {
-    @apply w-24 h-24 border border-black flex items-center justify-center shrink-0 text-xs text-center;
+  .about-photo-socials {
+    @apply flex flex-row;
   }
 
-  .home-bio {
+  .about-photo {
+    @apply w-48 h-48 border border-black flex items-center justify-center shrink-0 text-xs text-center;
+  }
+
+  .about-socials {
+    @apply flex flex-col;
+  }
+
+  .about-bio {
     @apply flex flex-col gap-3;
   }
 
-  .home-name {
+  .about-name {
     @apply text-2xl font-bold tracking-tight;
   }
 
-  .home-intro {
+  .about-intro {
     @apply text-sm leading-relaxed max-w-md;
   }
 
-  .home-cta-row {
+  .about-cta-row {
     @apply flex gap-3 mt-2;
   }
 
-  .home-skills-section {
+  .about-skills-section {
     @apply flex flex-col gap-4;
   }
 
-  .home-skills-grid {
-    @apply grid grid-cols-2 sm:grid-cols-3 gap-2;
+  .about-skills-grid {
+    @apply grid grid-cols-4 sm:grid-cols-4 gap-2;
   }
 
   /* ─── Projects ────────────────────────────────────── */
@@ -190,28 +198,6 @@ body {
 
   .project-links {
     @apply flex gap-3;
-  }
-
-  /* ─── About ───────────────────────────────────────── */
-
-  .about-layout {
-    @apply flex flex-col sm:flex-row gap-8;
-  }
-
-  .about-photo {
-    @apply w-32 h-32 border border-black flex items-center justify-center shrink-0 text-xs text-center;
-  }
-
-  .about-content {
-    @apply flex flex-col gap-6 text-sm leading-relaxed;
-  }
-
-  .about-section {
-    @apply flex flex-col gap-2;
-  }
-
-  .about-skills-list {
-    @apply grid grid-cols-2 gap-1 text-xs;
   }
 
   /* ─── Resume ──────────────────────────────────────── */
