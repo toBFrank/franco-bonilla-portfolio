@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -11,10 +12,27 @@ export default function Contact() {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.MouseEvent) => {
+  const handleSubmit = async (e: React.MouseEvent) => {
     e.preventDefault();
-    // TODO: wire up form submission
-    alert("Form submitted (placeholder)");
+
+    try {
+      console.log(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        form,
+        {publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!}
+      )
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        form,
+        {publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!}
+      );
+      setForm({ name: "", email: "", message: "" });
+    } catch (error) {
+      console.error(error);
+      alert("Failed to send message. Please try again.");
+    }
   };
 
   return (
@@ -76,20 +94,20 @@ export default function Contact() {
         <div className="contact-sidebar">
           <div className="contact-sidebar-section">
             <p className="contact-sidebar-label">Email</p>
-            <a href="mailto:you@example.com" className="contact-link">
-              you@example.com
+            <a href="mailto:bonilla.franco484@gmail.com" className="contact-link">
+              bonilla.franco484@gmail.com
             </a>
           </div>
           <div className="contact-sidebar-section">
             <p className="contact-sidebar-label">Socials</p>
             <ul className="contact-socials">
               {[
-                { label: "GitHub", href: "#" },
-                { label: "LinkedIn", href: "#" },
-                { label: "Twitter / X", href: "#" },
+                { label: "GitHub", href: "https://github.com/toBFrank" },
+                { label: "LinkedIn", href: "https://linkedin.com/in/tobfrank" },
+                { label: "Instagram", href: "https://instagram.com/tobfrankwu/" },
               ].map(({ label, href }) => (
                 <li key={label}>
-                  <a href={href} className="contact-link">
+                  <a href={href} target="_blank" rel="noopener noreferrer" className="contact-link">
                     {label} ↗
                   </a>
                 </li>

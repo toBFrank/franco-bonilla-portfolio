@@ -3,11 +3,13 @@
 :root {
   --background: #ededed;
   --foreground: #121212;
+  --tertiary: #666666;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-tertiary: var(--tertiary);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -16,6 +18,7 @@
   :root {
     --background: #121212;
     --foreground: #ededed;
+    --tertiary: #a0a0a0;
   }
 }
 
@@ -43,7 +46,7 @@ body {
   }
 
   .nav-inner {
-    @apply max-w-4xl mx-auto px-4 flex items-center justify-between h-14;
+    @apply max-w-5xl w-full mx-auto px-4 flex items-center justify-between h-14;
   }
 
   .nav-logo {
@@ -89,19 +92,19 @@ body {
   }
 
   .page-title {
-    @apply text-xs uppercase tracking-widest border-b border-foreground pb-1;
+    @apply text-base uppercase tracking-widest border-b border-foreground pb-1;
   }
 
   .section-heading {
-    @apply text-xs uppercase tracking-widest font-bold;
+    @apply text-sm uppercase tracking-widest font-bold;
   }
 
   .btn {
-    @apply border border-foreground px-3 py-1 text-xs hover:bg-foreground hover:text-background transition-colors;
+    @apply border border-foreground px-3 py-1 text-sm hover:bg-foreground hover:text-background transition-colors;
   }
 
   .btn-wide {
-    @apply border border-foreground px-4 py-2 text-xs uppercase tracking-wide hover:bg-foreground hover:text-background transition-colors self-start;
+    @apply border border-foreground px-4 py-2 text-sm uppercase tracking-wide hover:bg-foreground hover:text-background transition-colors self-start;
   }
 
   .card {
@@ -148,15 +151,15 @@ body {
   }
 
   .about-name {
-    @apply text-2xl font-bold tracking-tight;
+    @apply text-3xl font-bold tracking-tight;
   }
 
   .about-intro {
-    @apply text-sm leading-relaxed max-w-full text-justify;
+    @apply text-base leading-relaxed max-w-full text-justify;
   }
 
   .about-cta-row {
-    @apply flex flex-col gap-4 mt-2 w-full text-center;
+    @apply flex flex-col gap-2 mt-4 w-full text-center;
   }
 
   .about-skills-section {
@@ -186,15 +189,15 @@ body {
   }
 
   .project-title {
-    @apply font-bold text-base;
+    @apply font-bold text-xl;
   }
 
   .project-tech {
-    @apply text-xs uppercase tracking-wide text-gray-500;
+    @apply text-xs uppercase tracking-wide text-tertiary;
   }
 
   .project-desc {
-    @apply text-sm leading-relaxed;
+    @apply text-base leading-relaxed;
   }
 
   .project-links {
@@ -220,19 +223,19 @@ body {
   }
 
   .resume-role {
-    @apply font-bold text-sm;
+    @apply font-bold text-base;
   }
 
   .resume-company {
-    @apply text-xs text-gray-600;
+    @apply text-sm text-tertiary;
   }
 
   .resume-period {
-    @apply text-xs shrink-0;
+    @apply text-sm shrink-0;
   }
 
   .resume-desc {
-    @apply text-xs leading-relaxed text-gray-500;
+    @apply text-sm leading-relaxed text-foreground;
   }
 
   .resume-tags {

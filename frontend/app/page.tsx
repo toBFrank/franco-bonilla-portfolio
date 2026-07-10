@@ -1,5 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
+import GithubIcon from "@/public/icons/github_icon.svg";
+import LinkedinIcon from "@/public/icons/linkedin_icon.svg";
+import InstagramIcon from "@/public/icons/instagram_icon.svg";
 
 export default function Home() {
   return (
@@ -16,6 +19,31 @@ export default function Home() {
                 height={400}
               />
             </div>
+
+            <div className="about-socials mt-4 flex justify-between">
+              <Link
+                href="https://github.com/toBFrank"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GithubIcon width={36} height={36} fill={"var(--foreground)"} className="hover:opacity-80 transition-opacity"/>
+              </Link>
+              <Link
+                href="https://linkedin.com/in/tobfrank"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <LinkedinIcon width={36} height={36} fill={"var(--foreground)"} className="hover:opacity-80 transition-opacity"/>
+              </Link>
+              <Link
+                href="https://instagram.com/tobfrankwu/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <InstagramIcon width={36} height={36} fill={"var(--foreground)"} className="hover:opacity-80 transition-opacity"/>
+              </Link>
+            </div>
+
             <div className="about-cta-row">
               <a href="/resume" className="btn">
                 View Resume →
@@ -24,41 +52,6 @@ export default function Home() {
                 Contact Me →
               </a>
             </div>
-            {/* <div className="about-socials">
-              <Link
-                href="https://www.linkedin.com/in/tobfrank/"
-                target="_blank"
-              >
-                <Image
-                  src="/icons/linkedin_icon.png"
-                  alt="LinkedIn"
-                  width={36}
-                  height={36}
-                />
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/tobfrank/"
-                target="_blank"
-              >
-                <Image
-                  src="/icons/linkedin_icon.png"
-                  alt="LinkedIn"
-                  width={36}
-                  height={36}
-                />
-              </Link>
-              <Link
-                href="https://www.linkedin.com/in/tobfrank/"
-                target="_blank"
-              >
-                <Image
-                  src="/icons/linkedin_icon.png"
-                  alt="LinkedIn"
-                  width={36}
-                  height={36}
-                />
-              </Link>
-            </div> */}
           </div>
           <div className="about-bio">
             <h1 className="about-name">Hi, I'm Franco.</h1>
@@ -86,26 +79,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* <section className="about-skills-section">
-        <h2 className="page-title">Key Skills</h2>
-        <ul className="about-skills-grid">
-          {[
-            "TypeScript",
-            "JavaScript",
-            "Python",
-            "Node.js",
-            "Django",
-            "React",
-            "SQL/NoSQL",
-            "REST APIs",
-          ].map((skill) => (
-            <li key={skill} className="tag">
-              {skill}
-            </li>
-          ))}
-        </ul>
-      </section> */}
     </div>
   );
 }
