@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #ededed;
+  --foreground: #121212;
 }
 
 @theme inline {
@@ -14,7 +14,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #121212;
     --foreground: #ededed;
   }
 }
@@ -22,24 +22,24 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  /* font-family: Arial, Helvetica, sans-serif; */
 }
 
 /* ─── Layout ────────────────────────────────────────── */
 
 @layer components {
   .layout-body {
-    @apply min-h-full flex flex-col font-mono bg-white text-black;
+    @apply min-h-full flex flex-col font-mono bg-background text-foreground;
   }
 
   .layout-main {
-    @apply flex-1 max-w-4xl w-full mx-auto px-4 py-12;
+    @apply flex-1 max-w-5xl w-full mx-auto px-4 py-12;
   }
 
   /* ─── Navbar ──────────────────────────────────────── */
 
   .nav-root {
-    @apply border-b border-black;
+    @apply border-b border-foreground sticky top-0 z-50 bg-background;
   }
 
   .nav-inner {
@@ -63,15 +63,15 @@ body {
   }
 
   .nav-hamburger {
-    @apply sm:hidden font-mono text-sm border border-black px-2 py-1;
+    @apply sm:hidden font-mono text-sm border border-foreground px-2 py-1;
   }
 
   .nav-mobile-list {
-    @apply sm:hidden border-t border-black;
+    @apply sm:hidden border-t border-foreground;
   }
 
   .nav-mobile-item {
-    @apply border-b border-black;
+    @apply border-b border-foreground;
   }
 
   .nav-mobile-link {
@@ -89,7 +89,7 @@ body {
   }
 
   .page-title {
-    @apply text-xs uppercase tracking-widest border-b border-black pb-1;
+    @apply text-xs uppercase tracking-widest border-b border-foreground pb-1;
   }
 
   .section-heading {
@@ -97,33 +97,33 @@ body {
   }
 
   .btn {
-    @apply border border-black px-3 py-1 text-xs hover:bg-black hover:text-white transition-colors;
+    @apply border border-foreground px-3 py-1 text-xs hover:bg-foreground hover:text-background transition-colors;
   }
 
   .btn-wide {
-    @apply border border-black px-4 py-2 text-xs uppercase tracking-wide hover:bg-black hover:text-white transition-colors self-start;
+    @apply border border-foreground px-4 py-2 text-xs uppercase tracking-wide hover:bg-foreground hover:text-background transition-colors self-start;
   }
 
   .card {
-    @apply border border-black p-6 flex flex-col gap-4;
+    @apply border border-foreground p-6 flex flex-col gap-4;
   }
 
   .placeholder-img {
-    @apply border border-black flex items-center justify-center text-xs text-center;
+    @apply border border-foreground flex items-center justify-center text-xs text-center;
   }
 
   .tag {
-    @apply border border-black px-2 py-1 text-xs;
+    @apply border border-foreground px-2 py-1 text-xs;
   }
 
   /* ─── About ────────────────────────────────────────── */
 
   .about-wrapper {
-    @apply flex flex-col gap-12;
+    @apply flex flex-col gap-8;
   }
 
   .about-hero {
-    @apply border border-black p-8;
+    @apply border border-foreground p-8;
   }
 
   .about-hero-inner {
@@ -131,15 +131,16 @@ body {
   }
 
   .about-photo-socials {
-    @apply flex flex-row;
+    /* fill up full col height */
+    @apply flex flex-col justify-between items-center self-center;
   }
 
   .about-photo {
-    @apply w-48 h-48 border border-black flex items-center justify-center shrink-0 text-xs text-center;
+    @apply grow w-48 h-48 border rounded-full border-foreground flex items-center justify-center shrink-0 text-xs text-center;
   }
 
   .about-socials {
-    @apply flex flex-col;
+    @apply flex flex-row justify-between w-full;
   }
 
   .about-bio {
@@ -151,11 +152,11 @@ body {
   }
 
   .about-intro {
-    @apply text-sm leading-relaxed max-w-md;
+    @apply text-sm leading-relaxed max-w-full text-justify;
   }
 
   .about-cta-row {
-    @apply flex gap-3 mt-2;
+    @apply flex flex-col gap-4 mt-2 w-full text-center;
   }
 
   .about-skills-section {
@@ -173,11 +174,11 @@ body {
   }
 
   .project-card {
-    @apply border border-black p-6 flex flex-col gap-4;
+    @apply border border-foreground p-6 flex flex-col gap-4;
   }
 
   .project-screenshot {
-    @apply w-full h-40 border border-black flex items-center justify-center text-xs text-center bg-gray-50;
+    @apply w-full h-40 border border-foreground flex items-center justify-center text-xs text-center bg-gray-50;
   }
 
   .project-meta {
@@ -203,7 +204,7 @@ body {
   /* ─── Resume ──────────────────────────────────────── */
 
   .resume-header {
-    @apply flex items-center justify-between border-b border-black pb-1;
+    @apply flex items-center justify-between border-b border-foreground pb-1;
   }
 
   .resume-section {
@@ -211,7 +212,7 @@ body {
   }
 
   .resume-entry {
-    @apply border border-black p-4 flex flex-col gap-2;
+    @apply border border-foreground p-4 flex flex-col gap-2;
   }
 
   .resume-entry-header {
@@ -241,7 +242,7 @@ body {
   /* ─── Contact ─────────────────────────────────────── */
 
   .contact-layout {
-    @apply flex flex-col sm:flex-row gap-12;
+    @apply flex flex-col sm:flex-row gap-8;
   }
 
   .contact-form {
@@ -257,11 +258,11 @@ body {
   }
 
   .contact-input {
-    @apply border border-black px-3 py-2 text-sm bg-white outline-none focus:ring-1 focus:ring-black;
+    @apply border border-foreground px-3 py-2 text-sm bg-background outline-none focus:ring-1 focus:ring-foreground;
   }
 
   .contact-textarea {
-    @apply border border-black px-3 py-2 text-sm bg-white outline-none focus:ring-1 focus:ring-black resize-none;
+    @apply border border-foreground px-3 py-2 text-sm bg-background outline-none focus:ring-1 focus:ring-foreground resize-none;
   }
 
   .contact-sidebar {
