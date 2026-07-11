@@ -36,6 +36,8 @@ export default function Contact() {
   };
 
   return (
+    <div className="bg-[url('/images/mountains_2_portrait.jpg')] bg-fixed bg-center bg-cover bg-no-repeat px-4 py-12">
+
     <div className="page-wrapper">
       <h1 className="page-title">Contact</h1>
 
@@ -116,6 +118,7 @@ export default function Contact() {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }

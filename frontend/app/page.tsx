@@ -6,6 +6,7 @@ import InstagramIcon from "@/public/icons/instagram_icon.svg";
 
 export default function Home() {
   return (
+    <div className="bg-[url('/images/mountains_1.jpg')] bg-fixed bg-center bg-cover bg-no-repeat px-4 py-12">
     <div className="about-wrapper">
       <section className="about-hero">
         <div className="about-hero-inner">
@@ -68,7 +69,7 @@ export default function Home() {
               <br />
               <br />
               Outside of tech, you'll find me hiking in the woods, trying to
-              pick up German, absorbed in a book, or just spending time with my
+              pick up a new language, absorbed in a book, or just spending time with my
               loved ones.
               <br />
               <br />
@@ -79,6 +80,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+    </div>
     </div>
   );
 }

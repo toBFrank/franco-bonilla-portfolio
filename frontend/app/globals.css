@@ -32,11 +32,11 @@ body {
 
 @layer components {
   .layout-body {
-    @apply min-h-full flex flex-col font-mono bg-background text-foreground;
+    @apply min-h-full flex flex-col font-mono text-foreground;
   }
 
   .layout-main {
-    @apply flex-1 max-w-5xl w-full mx-auto px-4 py-12;
+    @apply flex-1;
   }
 
   /* ─── Navbar ──────────────────────────────────────── */
@@ -88,7 +88,7 @@ body {
   /* ─── Shared ──────────────────────────────────────── */
 
   .page-wrapper {
-    @apply flex flex-col gap-8;
+    @apply flex flex-col gap-8 max-w-5xl w-full mx-auto px-4 py-12 border border-foreground bg-background;
   }
 
   .page-title {
@@ -122,11 +122,11 @@ body {
   /* ─── About ────────────────────────────────────────── */
 
   .about-wrapper {
-    @apply flex flex-col gap-8;
+    @apply flex flex-col gap-8 max-w-5xl w-full mx-auto;
   }
 
   .about-hero {
-    @apply border border-foreground p-8;
+    @apply border border-foreground p-8 bg-background;
   }
 
   .about-hero-inner {
