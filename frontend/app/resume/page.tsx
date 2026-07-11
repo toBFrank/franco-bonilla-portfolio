@@ -1,6 +1,8 @@
 "use client"
 
 export default function Resume() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
   const experiences = [
     {
       role: "Software Engineer Intern",
@@ -87,13 +89,13 @@ export default function Resume() {
 
   const downloadPdf = () => {
     const link = document.createElement("a");
-    link.href = "Franco_Bonilla_Resume.pdf";
+    link.href = `${basePath}/Franco_Bonilla_Resume.pdf`;
     link.download = "Franco_Bonilla_Resume.pdf";
     link.click();
   };
 
   return (
-    <div className="bg-[url('/images/beach_portrait.jpg')] bg-fixed bg-center bg-cover bg-no-repeat px-4 py-12">
+    <div className={`bg-[url('${basePath}/images/beach_portrait.jpg')] bg-fixed bg-center bg-cover bg-no-repeat px-4 py-12`}>
     <div className="page-wrapper">
       <div className="resume-header">
         <h1 className="page-title" style={{ border: "none", paddingBottom: 0 }}>

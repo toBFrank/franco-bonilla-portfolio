@@ -4,6 +4,8 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
 export default function Contact() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+
   const [form, setForm] = useState({ name: "", email: "", message: "" });
 
   const handleChange = (
@@ -36,8 +38,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="bg-[url('/images/mountains_2_portrait.jpg')] bg-fixed bg-center bg-cover bg-no-repeat px-4 py-12">
-
+    <div className={`bg-[url('${basePath}/images/mountains_2_portrait.jpg')] bg-fixed bg-center bg-cover bg-no-repeat px-4 py-12`}>
     <div className="page-wrapper">
       <h1 className="page-title">Contact</h1>
 
