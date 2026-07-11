@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
       "*.svg": { loaders: ["@svgr/webpack"], as: "*.tsx" },
     },
   },
+  output: "export",
 };
 
 export default nextConfig;
