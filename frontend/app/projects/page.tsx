@@ -31,7 +31,10 @@ export default function Projects() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
 
   return (
-    <div className={`bg-[url('${basePath}/images/creek_1.jpg')] bg-fixed bg-center bg-cover bg-no-repeat px-4 py-12`}>
+    <div 
+      className={`bg-fixed bg-center bg-cover bg-no-repeat px-4 py-12`}
+      style={{ backgroundImage: `url('${basePath}/images/creek_1.jpg')` }}
+    >
     <div className="page-wrapper">
       <h1 className="page-title">Projects</h1>
 

@@ -95,7 +95,10 @@ export default function Resume() {
   };
 
   return (
-    <div className={`bg-[url('${basePath}/images/beach_portrait.jpg')] bg-fixed bg-center bg-cover bg-no-repeat px-4 py-12`}>
+    <div 
+      className={`bg-fixed bg-center bg-cover bg-no-repeat px-4 py-12`}
+      style={{ backgroundImage: `url('${basePath}/images/beach_portrait.jpg')` }}
+    >
     <div className="page-wrapper">
       <div className="resume-header">
         <h1 className="page-title" style={{ border: "none", paddingBottom: 0 }}>

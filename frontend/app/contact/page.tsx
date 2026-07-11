@@ -38,7 +38,10 @@ export default function Contact() {
   };
 
   return (
-    <div className={`bg-[url('${basePath}/images/mountains_2_portrait.jpg')] bg-fixed bg-center bg-cover bg-no-repeat px-4 py-12`}>
+    <div 
+      className={`bg-fixed bg-center bg-cover bg-no-repeat px-4 py-12`}
+      style={{ backgroundImage: `url('${basePath}/images/mountains_2_portrait.jpg')` }}
+    >
     <div className="page-wrapper">
       <h1 className="page-title">Contact</h1>
 

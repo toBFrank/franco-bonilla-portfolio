@@ -7,7 +7,10 @@ import InstagramIcon from "@/public/icons/instagram_icon.svg";
 export default function Home() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   return (
-    <div className={`bg-[url('${basePath}/images/mountains_1.jpg')] bg-fixed bg-center bg-cover bg-no-repeat px-4 py-12`}>
+    <div 
+      className={`bg-fixed bg-center bg-cover bg-no-repeat px-4 py-12`}
+      style={{ backgroundImage: `url('${basePath}/images/mountains_1.jpg')` }}
+    >
     <div className="about-wrapper">
       <section className="about-hero">
         <div className="about-hero-inner">
