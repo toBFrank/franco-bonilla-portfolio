@@ -1,7 +1,10 @@
+"use client"
 import Image from "next/image";
 
 const projects = [
   {
+    image: "images/nestuity.png",
+    video: undefined,
     id: 1,
     title: "Baby Product Management App",
     technologies: ["Java", "TypeScript", "Python", "React", "Next.js", "Spring Boot", "PostgreSQL", "Docker"],
@@ -10,6 +13,8 @@ const projects = [
     demo: "http://[2605:fd00:4:1001:f816:3eff:fee0:cbe1]/"
   },
   {
+    image: "images/tavern.png",
+    video: undefined,
     id: 2,
     title: "Distributed Social Network App",
     technologies: ["JavaScript", "Python", "React", "Django", "PostgreSQL", "Heroku"],
@@ -18,17 +23,24 @@ const projects = [
     demo: "https://www.youtube.com/watch?v=1eEFIIfovMM"
   },
   {
+    image: "images/self_reflection_pathfinding.gif",
+    video: undefined,
     id: 3,
     title: "AI Reinforcement Learning Agent",
     technologies: ["Python"],
     description: "Developed a self-reflective reinforcement learning algorithm, achieving 90% faster convergence than Q-learning.",
     source_code: "https://github.com/toBFrank/self-reflection-pathfinding",
-    demo: undefined
+    demo: undefined,
+    paper: "/Self_Reflection_Paper.pdf"
   },
 ];
 
 export default function Projects() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
+  
+  const openPdf = (paper: string) => {
+    window.open(`${basePath}${paper}`, "_blank")?.focus();
+  }
 
   return (
     <div 
@@ -42,6 +54,14 @@ export default function Projects() {
         {projects.map((p) => (
           <article key={p.id} className="project-card">
             <div className="project-meta">
+              {/** Placeholder project image `*/}
+                <Image
+                  src={`${basePath}/${p.video ? p.video : p.image}`}
+                  alt={p.title}
+                  width={500}
+                  height={500}
+                  className="project-screenshot"
+                />
               <h2 className="project-title">{p.title}</h2>
               <p className="project-desc">{p.description}</p>
               
@@ -72,7 +92,11 @@ export default function Projects() {
               rel="noopener noreferrer"
               className="btn">Demo ↗</a>
               )}
-              {/* <a href="https://github.com/toBFrank" target="_blank" rel="noopener noreferrer" className="btn">GitHub ↗</a> */}
+              {p.paper && (
+                <button className="btn" onClick={() => openPdf(p.paper)}>
+                  Research ↗
+                </button>
+              )}
             </div>
           </article>
         ))}

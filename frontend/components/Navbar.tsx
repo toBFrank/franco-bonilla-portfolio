@@ -15,6 +15,9 @@ export default function Navbar() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
 
+  const isActive = (href: string) =>
+    pathname === href || pathname === `${href}/`;
+
   return (
     <nav className="nav-root">
       <div className="nav-inner">
@@ -27,7 +30,7 @@ export default function Navbar() {
             <li key={href}>
               <Link
                 href={href}
-                className={pathname === href ? "nav-link-active" : "nav-link"}
+                className={isActive(href) ? "nav-link-active" : "nav-link"}
               >
                 {label}
               </Link>
@@ -51,7 +54,7 @@ export default function Navbar() {
               <Link
                 href={href}
                 className={
-                  pathname === href
+                  isActive(href)
                     ? "nav-mobile-link-active"
                     : "nav-mobile-link"
                 }
