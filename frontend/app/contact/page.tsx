@@ -39,7 +39,7 @@ export default function Contact() {
 
   return (
     <div 
-      className={`bg-fixed bg-center bg-cover bg-no-repeat px-4 py-12`}
+      className={`bg-fixed bg-center bg-cover bg-no-repeat px-4 py-12 flex-1`}
       style={{ backgroundImage: `url('${basePath}/images/mountains_2_portrait.jpg')` }}
     >
     <div className="page-wrapper">

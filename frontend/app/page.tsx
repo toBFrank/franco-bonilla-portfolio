@@ -8,7 +8,7 @@ export default function Home() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH || '';
   return (
     <div 
-      className={`bg-fixed bg-center bg-cover bg-no-repeat px-4 py-12`}
+      className={`bg-fixed bg-center bg-cover bg-no-repeat px-4 py-12 flex-1`}
       style={{ backgroundImage: `url('${basePath}/images/mountains_1.jpg')` }}
     >
     <div className="about-wrapper">
