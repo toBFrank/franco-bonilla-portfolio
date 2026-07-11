@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
     },
   },
   output: "export",
+  basePath: "/franco-bonilla-portfolio",
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
 };
 
 export default nextConfig;
