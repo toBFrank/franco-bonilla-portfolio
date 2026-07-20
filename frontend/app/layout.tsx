@@ -14,7 +14,10 @@ export const metadata: Metadata = {
   title: "Franco's Portfolio",
   description: "Personal portfolio website",
   icons: {
-    icon: `${BASE_PATH}/icons/franco_icon_closeup.png`
+    icon: `${BASE_PATH}/icons/franco_icon_no_bg.png`
+  },
+  openGraph: {
+    images: `${BASE_PATH}/icons/franco_icon_1.png`
   }
 };
 
